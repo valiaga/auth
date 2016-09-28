@@ -1,5 +1,5 @@
 "# auth" 
-One step
+One step.
   Install virtualenv
   Command: pip install virtualenv
 Two step
