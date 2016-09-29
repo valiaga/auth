@@ -39,9 +39,10 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'authentication',
-    'rest_framework ',
+    'rest_framework',
 ]
 
+# Authentication with our app 
 AUTH_USER_MODEL = 'authentication.Account'
 
 MIDDLEWARE = [
