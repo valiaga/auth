@@ -16,7 +16,7 @@ Including another URLconf
 from django.conf.urls import url, include
 from django.contrib import admin
 
-from rest_framework_nested import routers
+from rest_framework import routers
 from authentication.views import AccountViewSet
 
 router = routers.SimpleRouter()
