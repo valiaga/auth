@@ -1,0 +1,28 @@
+{
+  "name": "project_api",
+  "homepage": "https://github.com/valiaga/auth",
+  "authors": [
+    "Vitmar Aliaga Cruz <cruzjhonson@hotmail.com>"
+  ],
+  "description": "desc Project Api",
+  "main": "",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.5.8",
+    "angular-route": "^1.5.8",
+    "angular-cookies": "^1.5.8",
+    "bootstrap": "^3.3.7",
+    "bootstrap-material-design": "^4.0.2",
+    "jquery": "^3.1.1",
+    "ng-dialog": "ngDialog#^0.6.4",
+    "underscore": "^1.8.3"
+  }
+}
