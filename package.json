@@ -1,0 +1,23 @@
+{
+  "name": "auth",
+  "version": "1.0.0",
+  "description": "auth angular and drf",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/valiaga/auth.git"
+  },
+  "author": "@valiaga",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/valiaga/auth/issues"
+  },
+  "homepage": "https://github.com/valiaga/auth#readme",
+  "dependencies": {
+    "gulp": "^3.9.1",
+    "gulp-connect": "^5.0.0"
+  }
+}

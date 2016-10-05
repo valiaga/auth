@@ -47,6 +47,7 @@ INSTALLED_APPS = [
 # Authentication with our app 
 AUTH_USER_MODEL = 'authentication.Account'
 
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -144,7 +145,10 @@ STATICFILES_FINDERS = (
 # Django Rest framework 
 #
 REST_FRAMEWORK = {
-    'DEFAULT_AUTHENTICATION_CLASSES': (
+    # Use Django's standard `django.contrib.auth` permissions,
+    # or allow read-only access for unauthenticated users.
+    'DEFAULT_PERMISSION_CLASSES': [
         'rest_framework.authentication.SessionAuthentication',
-    )
+        #'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
+    ]
 }
