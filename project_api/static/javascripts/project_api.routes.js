@@ -1,3 +1,7 @@
+/**
+ * Project Api Routes
+ * @namespace project_api.routes
+ */
 (function(){
     'use strict';
 
@@ -15,7 +19,7 @@
       $routeProvider.when('/register', {
           controller: 'RegisterController',
           controllerAs: 'vm',
-          templateUrl: '/static/templates/authentication/register.html'
+          templateUrl: '../../../templates/authentication/register.html'
       }).otherwise('/')
     }
 })();
