@@ -3,20 +3,23 @@
  * @namespace project_api.config
  */
 (function(){
-    'use strict';
+  'use strict';
     
-    angular
-        .module('project_api.config')
-        .config(config);
+  angular
+    .module('project_api.config')
+    .config(config);
     
-    config.$inject = ['$locationProvider'];
+  config.$inject = ['$locationProvider'];
 
-    /**
-     * @name config
-     * @desc Enable HTML5 routing
-     */
-    function config($locationProvider){
-        $locationProvider.html5Mode(true);
-        $locationProvider.hashPrefix('!');
-    }
+  /**
+   * @name config
+   * @desc Enable HTML5 routing
+   */
+  function config($locationProvider){
+    $locationProvider.html5Mode(true);
+    $locationProvider.hashPrefix('!');
+    
+    //$httpProvider.defaults.xsrfCookieName = 'csrftoken';
+    //$httpProvider.defaults.xsrfHeaderName = 'X-CSRFToken';
+  }
 })();

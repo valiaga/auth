@@ -17,7 +17,8 @@
       .module('project_api', [
         'project_api.config',
         'project_api.routes',
-        'project_api.authentication'
+        'project_api.authentication',
+        'project_api.layout'
       ]);
     /**
      * Dependencias Definidas
@@ -28,9 +29,9 @@
     
     angular
       .module('project_api.routes', ['ngRoute']);
-      
+    /* 
     angular
-      .module('project_api.authentication', []);
+      .module('project_api.authentication', []);*/
     /**
      * Reference to Project_api
      */
@@ -38,15 +39,17 @@
       .module('project_api')
       .run(run)
     
-    run.$inject = ['$http'];
+    run.$inject = ['$http', '$cookies'];
 
     /**
      * @name run
      * @desc Update xsrf $http headers to align with Django's defaults
      */
-    function run($http){
+    function run($http, $cookies){
       $http.defaults.xrfsHeaderName = 'X-CSRFToken';
       $http.defaults.xrfsHeaderName = 'csrftoken';
+
+      $http.defaults.headers.post['X-CSRFToken'] = $cookies.get('csrftoken');
     }
 })();
 

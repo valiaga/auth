@@ -3,29 +3,41 @@
  * @namespace project_api.authentication.controllers
  */
 (function(){
-    'use strict';
+  'use strict';
 
-    angular
-      .module('project_api.authentication.controllers')
-      .controller('RegisterController', RegisterController);
+  angular
+    .module('project_api.authentication.controllers')
+    .controller('RegisterController', RegisterController);
 
-    RegisterController.$inject = ['$location', '$scope', 'Authentication'];
+  RegisterController.$inject = ['$location', '$scope', 'Authentication'];
+
+  /**
+   * @namespace RegisterController
+   */
+  function RegisterController($location, $scope, Authentication){
+    var vm = this;
+
+    vm.register = register;
 
     /**
-     * @namespace RegisterController
+     * @name activate
+     * @desc Actions to be performed when this controller is instantiated
+     * @memberOf project_api.authentication.controllers.RegisterController 
      */
-    function RegisterController($location, $scope, Authentication){
-        var vm = this;
-
-        vm.register = register;
-
-        /**
-         * @name register
-         * @desc Register a new user
-         * @memberOf project_api.authentication.controllers.RegisterController
-         */
-        function register(){
-            Authentication.register(vm.email, vm.password, vm.username);
-        }
+    function activate(){
+      // If the user is authenticated, they should not be here
+      if(Authentication.isAuthenticated()){
+        $location.url('/');
+      }
     }
+
+    /**
+     * @name register
+     * @desc Register a new user
+     * @memberOf project_api.authentication.controllers.RegisterController
+     */
+    function register(){
+      Authentication.register(vm.email, vm.password, vm.username);
+    }
+  }
 })();
