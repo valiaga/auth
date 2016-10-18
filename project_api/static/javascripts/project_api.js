@@ -18,20 +18,22 @@
         'project_api.config',
         'project_api.routes',
         'project_api.authentication',
-        'project_api.layout'
+        'project_api.layout',
+        'project_api.posts',
+        'project_api.utils'
       ]);
+    
     /**
      * Dependencias Definidas
      * @name project_api.dependences  
      */
+    
     angular
       .module('project_api.config', []);
     
     angular
       .module('project_api.routes', ['ngRoute']);
-    /* 
-    angular
-      .module('project_api.authentication', []);*/
+
     /**
      * Reference to Project_api
      */
