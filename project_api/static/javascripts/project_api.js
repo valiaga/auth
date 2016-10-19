@@ -17,6 +17,7 @@
       .module('project_api', [
         'project_api.config',
         'project_api.routes',
+        
         'project_api.authentication',
         'project_api.layout',
         'project_api.posts',
@@ -41,17 +42,18 @@
       .module('project_api')
       .run(run)
     
-    run.$inject = ['$http', '$cookies'];
+    //run.$inject = ['$http', '$cookies'];
+    run.$inject = ['$http'];
 
     /**
      * @name run
      * @desc Update xsrf $http headers to align with Django's defaults
      */
-    function run($http, $cookies){
+    function run($http){
       $http.defaults.xrfsHeaderName = 'X-CSRFToken';
       $http.defaults.xrfsHeaderName = 'csrftoken';
 
-      $http.defaults.headers.post['X-CSRFToken'] = $cookies.get('csrftoken');
+      //$http.defaults.headers.post['X-CSRFToken'] = $cookies.get('csrftoken');
     }
 })();
 

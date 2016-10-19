@@ -16,8 +16,9 @@
      */
     function IndexController($scope, Authentication, Posts, Snackbar){
       var vm = this;
-
+     
       vm.isAuthenticated = Authentication.isAuthenticated();
+      
       vm.posts = [];
 
       activate();
@@ -50,7 +51,7 @@
          * @name postsErrorFn
          * @desc show snackbar with error 
          */
-        function postsErroFn (data, status, headers, config){
+        function postsErrorFn (data, status, headers, config){
           Snackbar.error(data.error);
         }
       }

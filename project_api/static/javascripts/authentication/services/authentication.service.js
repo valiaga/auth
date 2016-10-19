@@ -49,7 +49,8 @@
         password: password,
         email: email
       }).then(registerSuccessFn, registerErrorFn);
-      
+       
+
       /**
        * @name registerSuccessFn
        * @desc Log the new user in
@@ -57,6 +58,7 @@
       function registerSuccessFn(data, status, headers, config){
         Authentication.login(email,password)
       }
+
 
       /**
        * @name registerErrorFn
@@ -66,6 +68,7 @@
         console.log('Epic failure!');
       }
     }
+
 
     /**
      * @name login
@@ -81,25 +84,28 @@
         password: password
       }).then(loginSuccessFn, loginErrorFn);
 
+
       /**
        * @name loginSuccessFn
        * @desc Set the authenticated account and redirect to index
        */
       function loginSuccessFn(data, status, headers, config){
-        Authentication.setAuthenticatedAccount(data.data)
+        Authentication.setAuthenticatedAccount(data.data);
 
         window.location = '/';
       }
+
 
       /**
        * @name loginErrorFn
        * @desc Log 'Epic failure!' to the console
        */
       function loginErrorFn(data, status, headers, config){
-        console.log('Epic failure!')
+        console.log('Epic failure!');
 
       }
     }
+
 
     /**
      * @name logout
@@ -111,6 +117,7 @@
       return $http.post('/api/v1/auth/logout/')
         .then(logoutSuccessFn, logoutErrorFn);
       
+
       /**
        * @name logoutSuccessFn
        * @desc Unauthenticate and redirect to index with page reload
@@ -120,6 +127,8 @@
 
         window.location = '/';
       }
+
+
       /**
        * @name logoutErrorFn
        * @desc Log 'Epic failure!' to the console
@@ -129,6 +138,7 @@
       }
     }
 
+
     /**
      * @name getAuthenticatedAccount
      * @desc Return the currently authenticated account 
@@ -136,12 +146,13 @@
      * @memberOf project_api.authentication.services.Authentication 
      */
     function getAuthenticatedAccount(){
-      if(!$cookies.authenticatedAccount){
+      if(!$cookies.get('authenticatedAccount')){
         return;
       }
 
-      return JSON.parse($cookies.authenticatedAccount)
+      return JSON.parse($cookies.get('authenticatedAccount'));
     }
+
 
     /**
      * @name isAuthenticated
@@ -150,8 +161,9 @@
      * @memberOf project_api.authentication.services.Authentication
      */
     function isAuthenticated(){
-      return !!$cookies.authenticatedAccount; 
+      return !!$cookies.get('authenticatedAccount'); 
     }
+
 
     /**
      * @name setAuthenticatedAccount
@@ -160,8 +172,9 @@
      * @memberOf project_api.authentication.services.Authentication
      */
     function setAuthenticatedAccount(account){
-      $cookies.authenticatedAccount = JSON.stringify(account);
+      $cookies.put('authenticatedAccount', JSON.stringify(account));
     }
+
 
     /**
      * @name unauthenticate
@@ -170,7 +183,8 @@
      * @memberOf project_api.authentication.services.Authentication
      */
     function unauthenticate(){
-      delete $cookies.authenticatedAccount;
+      $cookies.remove('authenticatedAccount');
+      //delete $cookies.authenticatedAccount;
     }
   }
 })();

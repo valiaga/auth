@@ -44,7 +44,7 @@
      * @memberOf project_api.posts.services.Posts
      */
     function create(content){
-      return $http.post('/api/v1/posts',{
+      return $http.post('/api/v1/posts/',{
         content: content
       });
     }

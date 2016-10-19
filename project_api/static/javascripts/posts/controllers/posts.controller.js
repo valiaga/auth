@@ -7,18 +7,17 @@
 
   angular
     .module('project_api.posts.controllers')
-    .controller('PostsController', PostController)
+    .controller('PostsController', PostsController)
 
-    PostController.$inject = ['$scope'];
+    PostsController.$inject = ['$scope'];
 
     /**
-     * @namespace PostController
+     * @namespace PostsController
      */
-    function PostController($scope){
+    function PostsController($scope){
       var vm = this;
 
       vm.colums = [];
-
       activate();
 
       /**
@@ -73,7 +72,7 @@
             return element.content.length;
           });
 
-          return lenths.reduce(sum, 0) * column.length
+          return lengths.reduce(sum, 0) * column.length
         }
 
 
