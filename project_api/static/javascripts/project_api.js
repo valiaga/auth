@@ -21,7 +21,8 @@
         'project_api.authentication',
         'project_api.layout',
         'project_api.posts',
-        'project_api.utils'
+        'project_api.utils',
+        'project_api.profiles'
       ]);
     
     /**

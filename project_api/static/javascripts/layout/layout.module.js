@@ -1,7 +1,3 @@
-/**
- * layout.module
- * @namespace project_api.layout
- */
 (function(){
   'use strict';
 

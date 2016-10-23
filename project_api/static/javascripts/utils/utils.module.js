@@ -1,7 +1,3 @@
-/**
- * utils mudule
- * @namespace 
- */
 (function(){
   'use strict';
   

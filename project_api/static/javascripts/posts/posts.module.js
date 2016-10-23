@@ -1,7 +1,3 @@
-/**
- * Posts module
- * @namespace project_api.posts
- */
 (function (){
   'use strict';
 
@@ -12,10 +8,6 @@
         'project_api.posts.services'
     ]);
 
-  /**
-   * Insert Modules
-   * @namespace Modules
-   */
   angular
     .module('project_api.posts.controllers', []);
 

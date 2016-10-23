@@ -43,7 +43,7 @@
      * @returns {Promise}
      * @memberOf project_api.posts.services.Posts
      */
-    function create(content){
+    function create(content) {
       return $http.post('/api/v1/posts/',{
         content: content
       });
@@ -56,8 +56,9 @@
      * @returns {Promise}
      * @memberOf project_api.posts.services.Posts
      */
-    function get(username){
-      return $http.get('/api/v1/accounts/'+username+'/posts/')
+    function get(username) {
+      console.log('get method post Post! '+username);
+      return $http.get('/api/v1/accounts/' + username + '/posts/')
     }
   }
 })();
