@@ -17,7 +17,7 @@
     function PostsController($scope){
       var vm = this;
 
-      vm.colums = [];
+      vm.columns = [];
       activate();
 
       /**

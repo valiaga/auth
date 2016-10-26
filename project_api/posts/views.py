@@ -1,5 +1,5 @@
 from django.shortcuts import render
-
+import logging
 from rest_framework import permissions, viewsets
 from rest_framework.response import Response 
 
@@ -26,7 +26,7 @@ class AccountPostsViewSet(viewsets.ViewSet):
     serializer_class = PostSerializer
 
     def list(self, request, account_username = None):
-        queryset = self.queryset.filter(author_id=account_username)
+        queryset = self.queryset.filter(author__username=account_username)
         serializer = self.serializer_class(queryset, many=True)
 
         return Response(serializer.data)

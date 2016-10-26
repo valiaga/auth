@@ -57,7 +57,6 @@
      * @memberOf project_api.posts.services.Posts
      */
     function get(username) {
-      console.log('get method post Post! '+username);
       return $http.get('/api/v1/accounts/' + username + '/posts/')
     }
   }
